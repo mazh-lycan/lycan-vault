@@ -1,0 +1,18 @@
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    margin: 20px;
+}
+#results {
+    margin-top: 20px;
+}
+.box {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    white-space: pre-wrap;
+}
+#drop-area.highlight {
+    border-color: #666;
+}
