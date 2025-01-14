@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hash Calculator</title>
+    <link rel="stylesheet" href="./website/styles.css">
+</head>
+<body>
+     <h1>Image SHA-256 Hash Calculator</h1>
+    <div id="drop-area">
+        <p>Drag and drop an image here or click to upload</p>
+        <input type="file" id="fileInput" accept="image/png, image/jpeg" hidden>
+    </div>
+    <div id="results">
+        <h3>Results: <span id="fileName"></span></h3>
+        <div class="box" id="hashOutput">SHA-256 Hash: </div>
+        <div class="box" id="formatOutput">File Format: </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="./website/script.js"></script>
+
+    <h2>Connect wallet</h2>
+    <button id="connectwallet">CONNECT</button>
+
+    <h2>Register Artist</h2>
+    <input type="text" id="user_tag_register" placeholder="@mazh_lycan">
+    <button id="register_artist">REGISTER TAG</button>
+    <p id="registered"></p>
+
+    <h2>Check Account Consent</h2>
+    <label>Account tag:</label>
+    <input type="text" id="user_tag" placeholder="@mazh_lycan">
+    <button id="check_consent">Get Art4AI</button>
+    <p id="art4AI_result"></p>
+
+    <h2>Add Art4AI Consent</h2>
+    <label>Account tag:</label>
+    <input type="text" id="user_tag_add" placeholder="@mazh_lycan">
+    <button id="add_consent">Add Art4AI</button>
+    <p id="art4AI_given"></p>
+
+   </body>
+</html>
