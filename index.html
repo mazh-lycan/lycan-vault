@@ -3,42 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Hash Calculator</title>
+    <title>AI Training Consent Register</title>
     <link rel="stylesheet" href="./website/styles.css">
 </head>
-<body>
-     <h1>Image SHA-256 Hash Calculator</h1>
-    <div id="drop-area">
-        <p>Drag and drop an image here or click to upload</p>
-        <input type="file" id="fileInput" accept="image/png, image/jpeg" hidden>
-    </div>
-    <div id="results">
-        <h3>Results: <span id="fileName"></span></h3>
-        <div class="box" id="hashOutput">SHA-256 Hash: </div>
-        <div class="box" id="formatOutput">File Format: </div>
-
+<body class="bodycls">
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script type="module" src="./website/script.js"></script>
 
-    <h2>Connect wallet</h2>
-    <button id="connectwallet">CONNECT</button>
+    
+    <header class="header">
 
-    <h2>Register Artist</h2>
-    <input type="text" id="user_tag_register" placeholder="@mazh_lycan">
-    <button id="register_artist">REGISTER TAG</button>
-    <p id="registered"></p>
+        <img src="./website/pics/Lobito.png" alt="FIRE" class="fire" border="0" />
 
-    <h2>Check Account Consent</h2>
-    <label>Account tag:</label>
-    <input type="text" id="user_tag" placeholder="@mazh_lycan">
-    <button id="check_consent">Get Art4AI</button>
-    <p id="art4AI_result"></p>
+        <p class="header-text">AI Consent Register</p>
 
-    <h2>Add Art4AI Consent</h2>
-    <label>Account tag:</label>
-    <input type="text" id="user_tag_add" placeholder="@mazh_lycan">
-    <button id="add_consent">Add Art4AI</button>
-    <p id="art4AI_given"></p>
+
+        <div class="buttons-contact">     
+            <a href="https://github.com/mazh-lycan" target="_blank" class="github-btn"  " border="0">
+                <button>
+                <img src="./website/pics/github.png" alt="Github" class="github-btn-pic" " border="0" />
+                </button>
+            </a>
+            <button>
+                <img src="./website/pics/connect.png" id= "connectwallet" alt="CONNECT WALLEtT" class="connect-btn-pic" " border="0" />
+            </button>
+        </div>
+    </header>
+
+   
+    <div id="block1">
+        <h2>Check Account Consent</h2>
+        <input type="text" id="user_tag" placeholder="@mazh_lycan">
+        <button>
+            <img src="./website/pics/checkconsent.png" id= "check_consent" alt="CHECK CONSENT" class="action-btn-pic" " border="0" />
+        </button>
+
+        <h2>Register Artist Tag</h2>
+        <input type="text" id="user_tag_register" placeholder="@mazh_lycan">
+        <button>
+            <img src="./website/pics/registertag.png" id= "register_artist" alt="REGISTER ARTIST" class="action-btn-pic" " border="0" />
+        </button>
+    </div>
+    <div id="block1">
+        <p id="art4AI_result"></p>
+        <p id="registered"></p>
+
+    </div>
+
+    <h1 style="text-align: center;">Register for AI training consent</h1>
+    <div id="drop-area">
+        <p>Drag and drop the image here or click to upload</p>
+        <input type="file" id="fileInput" accept="image/png, image/jpeg" hidden>
+    </div>
+    <div id="results">
+        <h3>Unique code for registration: This code is inherent to the image, and the same file will always produce the same code <span id="fileName"></span></h3>
+        <div class="box" id="hashOutput">Image obtained code: </div>
+        <!--
+        <div class="box" id="formatOutput">File Format: </div>
+        -->
+
+    <div id="block3">
+        <h2>Add Art4AI Consent</h2>
+        <div>
+            <label>Account tag:</label>
+            <input type="text" id="user_tag_add" placeholder="@mazh_lycan">
+            <button>
+                <img src="./website/pics/giveconsent.png" id= "add_consent" alt="GIVE CONSENT" class="action-btn-pic" " border="0" />
+            </button>
+            <p id="art4AI_given"></p>
+        </div>
+    </div>        
 
    </body>
 </html>
