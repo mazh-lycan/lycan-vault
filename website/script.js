@@ -4,6 +4,7 @@ const fileInput = document.getElementById('fileInput');
 const contractAddress = '0xA710536b170E29F701636AEf82d32F4864140f5C';
 const farfe = await fetch('../artifacts/contracts/AISavior.sol/AISavior.json')
 const abiJSON = await farfe.json();
+var hash;
 
 let web3;
 let accounts;
@@ -117,10 +118,10 @@ fileInput.addEventListener('change', async (event) => {
 });
 
 async function processFile(file) {
-    const hash = await calculateHash(file);
+    hash = await calculateHash(file);
     const format = file.type.split('/')[1].toUpperCase();
-    document.getElementById('hashOutput').innerText = `SHA-256 Hash: ${hash}`;
-    document.getElementById('formatOutput').innerText = `File Format: ${format}`;
+    document.getElementById('hashOutput').innerText = `Image obtained code: ${hash}`;
+   // document.getElementById('formatOutput').innerText = `File Format: ${format}`;
     document.getElementById('fileName').innerText = `File: ${file.name}`;
 
 }
@@ -152,6 +153,12 @@ document.getElementById("register_artist").addEventListener('click',
 )
 
 
+
+
+let resultbr = "";
+function addbreak(value, index, array) {
+  resultbr += value + "<br>"; 
+}
 document.getElementById('check_consent').addEventListener('click', async() => {
     tagvalue = document.getElementById('user_tag').value;
     holdervalue = await contract.methods.getAddressFromTag(tagvalue).call({
@@ -164,7 +171,9 @@ document.getElementById('check_consent').addEventListener('click', async() => {
             from: userAccount});
 
         console.log('Artwork with consent from', tagvalue, "are the following: ", result);
-        document.getElementById('art4AI_result').innerHTML = result;
+        
+        result.forEach(addbreak);
+        document.getElementById("art4AI_result").innerHTML = resultbr;
       
     }catch (error) {
       console.error('Get Artworks failed:', error);
@@ -174,7 +183,7 @@ document.getElementById('check_consent').addEventListener('click', async() => {
 
 document.getElementById('add_consent').addEventListener('click', async() => {
     tagvalue = document.getElementById('user_tag_add').value; 
-    newhashvalue = document.getElementById('hashOutput').innerText;
+    newhashvalue = hash;
     holdervalue = await contract.methods.getAddressFromTag(tagvalue).call({
         from:userAccount});
     firmaValidacion = await firmaNonce(holdervalue);
