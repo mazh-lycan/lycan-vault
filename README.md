@@ -2,7 +2,7 @@
 
 This project aims to protect the intellectual property of artists against the use of their artworks without consent with the purpose of training AI models.
 
-The project aims to provide a public registry of consent over images and a vinculation with the original artists. This will allow:
+The project aims to provide a public registry of consent over images and a link with the original artists. This will allow:
 - To check if an artist has given consent over an image to allow for AI training.
 - To facilitate to the AI creators to provide incentives in exchange to the artists that give consent via the information logged in the registry.
 
