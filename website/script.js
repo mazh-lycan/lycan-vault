@@ -172,7 +172,7 @@ document.getElementById('check_consent').addEventListener('click', async() => {
             from: userAccount});
 
         console.log('Artwork with consent from', tagvalue, "are the following: ", result);
-        
+        resultbr = "";
         result.forEach(addbreak);
         document.getElementById("art4AI_result").innerHTML = resultbr;
       
