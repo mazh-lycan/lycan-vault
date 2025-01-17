@@ -45,8 +45,12 @@
             
                 - To check if an artist has given consent over an image to allow for AI training.<br>
                 - To facilitate to the AI creators to provide incentives in exchange to the artists that give consent via the information logged in the registry.<br>
-            
-            0xA710536b170E29F701636AEf82d32F4864140f5C is the current Smart Contract used by the project on Sepolia. Please take into account that this is an unfinished demo of the final product. Registration of accounts to protect rights does not provide a solid legal proof in the current state of the project.</h1>
+       
+            Note that in the current state of the project, in order to register user tags or art for consent, you will need Metamask, the web3 wallet extension, and Sepolia ETH to cover the gas fees. <br>   
+            This version uses a simplified version of the final Smart Contract. Current version requires checks to ensure a tag cannot be linked to more than one wallet. This is current Work In Progress.<br>
+            In future, tag and wallet vinculation will be done through a more user friendly solution. <br>
+            Please take into account that this is an unfinished demo of the final product. Registration of accounts to protect rights does not provide a solid legal proof in the current state of the project.
+        </h1>
     </div>
 
    
@@ -83,8 +87,8 @@
 
     <div id="block3">
         <h2>Add Art4AI Consent</h2>
-        <div>
-            <label>Account tag:</label>
+        <div id="block1">
+            <h3 style="margin-right:20px">Account tag:</h3>
             <input type="text" id="user_tag_add" placeholder="@mazh_lycan">
             <button>
                 <img src="./website/pics/giveconsent.png" id= "add_consent" alt="GIVE CONSENT" class="action-btn-pic" " border="0" />
