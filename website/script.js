@@ -2,7 +2,8 @@ const dropArea = document.getElementById('drop-area');
 const fileInput = document.getElementById('fileInput');
 
 const contractAddress = '0xA710536b170E29F701636AEf82d32F4864140f5C';
-const farfe = await fetch('../artifacts/contracts/AISavior.sol/AISavior.json')
+//../ en local , ./ en github
+const farfe = await fetch('./artifacts/contracts/AISavior.sol/AISavior.json')
 const abiJSON = await farfe.json();
 var hash;
 
