@@ -7,7 +7,8 @@ const farfe = await fetch('./artifacts/contracts/AISavior.sol/AISavior.json')
 const abiJSON = await farfe.json();
 var hash;
 
-let web3;
+//For users with no extension just to check list of consent
+let web3 = new Web3('https://ethereum-sepolia-rpc.publicnode.com');
 let accounts;
 let userAccount;
 let contract;
@@ -18,6 +19,8 @@ var nonce;
 var holdervalue;
 var tagvalue;
 var newhashvalue;
+abicontent = abiJSON.abi;
+contract = new web3.eth.Contract(abicontent, contractAddress);
 
 /** 
  * AÑADIR REGISTER ARTWORK Y CAJITAS CORRESPONDIENTES
@@ -28,10 +31,8 @@ async function connectwallet(){
     console.log('MetaMask is installed!');
     web3 = new Web3(window.ethereum);
 
-    
     abicontent = abiJSON.abi;
     contract = new web3.eth.Contract(abicontent, contractAddress);
-
 
     try {  // Request account access  
         await window.ethereum.enable(); 
@@ -163,13 +164,13 @@ function addbreak(value, index, array) {
 document.getElementById('check_consent').addEventListener('click', async() => {
     tagvalue = document.getElementById('user_tag').value;
     holdervalue = await contract.methods.getAddressFromTag(tagvalue).call({
-        from:userAccount});
+        });
     
     console.log(tagvalue, holdervalue);
   
     try{
         result = await contract.methods.checkRegisteredArtworks(tagvalue).call({
-            from: userAccount});
+            });
 
         console.log('Artwork with consent from', tagvalue, "are the following: ", result);
         resultbr = "";
